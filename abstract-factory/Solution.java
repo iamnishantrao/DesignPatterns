@@ -27,7 +27,7 @@ public class Solution {
     }
 }
 
-// abstract factory classe
+// interface for abstract factory
 interface AbstractComboFactory {
 
     public abstract AbstractSandwich createSandwich();
@@ -74,26 +74,26 @@ class ComboTwoFactory implements AbstractComboFactory {
     }
 }
 
-// abstract product classes
-abstract class AbstractSandwich {
+// interfaces for different product types
+interface AbstractSandwich {
 
     public abstract String getCombo();
 
     public abstract String getName();
 }
 
-abstract class AbstractDrink {
+interface AbstractDrink {
 
     public abstract String getName();
 }
 
-abstract class AbstractSide {
+interface AbstractSide {
 
     public abstract String getName();
 }
 
 // concrete product classes
-class SpicyChickenSandwich extends AbstractSandwich {
+class SpicyChickenSandwich implements AbstractSandwich {
 
     public String getCombo() {
         
@@ -106,7 +106,7 @@ class SpicyChickenSandwich extends AbstractSandwich {
     }
 }
 
-class CocaCola extends AbstractDrink {
+class CocaCola implements AbstractDrink {
 
     public String getName() {
         
@@ -114,7 +114,7 @@ class CocaCola extends AbstractDrink {
     }
 }
 
-class SpicyFries extends AbstractSide {
+class SpicyFries implements AbstractSide {
 
     public String getName() {
         
@@ -122,7 +122,7 @@ class SpicyFries extends AbstractSide {
     }
 }
 
-class VegSandwich extends AbstractSandwich {
+class VegSandwich implements AbstractSandwich {
 
     public String getCombo() {
         
@@ -135,7 +135,7 @@ class VegSandwich extends AbstractSandwich {
     }
 }
 
-class Pepsi extends AbstractDrink {
+class Pepsi implements AbstractDrink {
 
     public String getName() {
         
@@ -143,7 +143,7 @@ class Pepsi extends AbstractDrink {
     }
 }
 
-class NormalFries extends AbstractSide {
+class NormalFries implements AbstractSide {
 
     public String getName() {
         
